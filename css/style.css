@@ -9,6 +9,10 @@
     color: white;
     font-weight: bold;
 }
+.botonEnviar{
+    color: black;
+    background-color: rgb(255, 197, 230);
+}
 footer{
     background-color: rgb(250, 223, 255);
 }
