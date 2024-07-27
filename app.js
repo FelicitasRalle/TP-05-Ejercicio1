@@ -1,29 +1,29 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    let magicNumber;
-    const startGameButton = document.getElementById('startGame');
-    const gameArea = document.getElementById('gameArea');
-    const guessInput = document.getElementById('guessInput');
-    const submitGuessButton = document.getElementById('submitGuess');
+    let numeroMagico;
+    const botonComenzar= document.getElementById('botonComenzar');
+    const areaJuego = document.getElementById('areaJuego');
+    const input = document.getElementById('input');
+    const botonEnviar = document.getElementById('botonEnviar');
 
-    startGameButton.addEventListener('click', () => {
-      magicNumber = Math.floor(Math.random() * 100) + 1;
-      gameArea.classList.remove('d-none');
-      guessInput.value = '';
+    botonComenzar.addEventListener('click', () => {
+      numeroMagico = Math.floor(Math.random() * 100) + 1;
+      areaJuego.classList.remove('d-none');
+      input.value = '';
       alert('El juego ha comenzado. Intenta adivinar el número mágico (entre 1 y 100).');
     });
 
-    submitGuessButton.addEventListener('click', () => {
-      const userGuess = parseInt(guessInput.value);
+    botonEnviar.addEventListener('click', () => {
+      const adivinanzaUsuario = parseInt(input.value);
 
-      if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
+      if (isNaN(adivinanzaUsuario) || adivinanzaUsuario < 1 || adivinanzaUsuario > 100) {
         alert('Por favor, ingresa un número válido entre 1 y 100.');
         return;
       }
 
-      if (userGuess === magicNumber) {
+      if (adivinanzaUsuario === numeroMagico) {
         alert('¡Felicidades! Has adivinado el número mágico.');
-        gameArea.classList.add('d-none');
-      } else if (userGuess > magicNumber) {
+        areaJuego.classList.add('d-none');
+      } else if (adivinanzaUsuario > numeroMagico) {
         alert('El número ingresado es mayor al número mágico.');
       } else {
         alert('El número ingresado es menor al número mágico.');
